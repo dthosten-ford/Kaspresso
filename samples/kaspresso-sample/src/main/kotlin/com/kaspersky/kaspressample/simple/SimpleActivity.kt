@@ -21,7 +21,7 @@ class SimpleActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         button_1.setOnClickListener {
-            button_2.visibility = View.VISIBLE
+            button2ClickEvent()
         }
         button_2.setOnClickListener {
             // special sleep to emulate ui block operation to check attempt method correctness
@@ -30,5 +30,9 @@ class SimpleActivity : AppCompatActivity() {
                 runOnUiThread { edit.visibility = View.VISIBLE }
             }
         }
+    }
+
+    private fun button2ClickEvent() {
+        button_2.visibility = View.VISIBLE
     }
 }
